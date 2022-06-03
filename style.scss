@@ -1,0 +1,69 @@
+$verde: green;
+$rosso: red;
+$blu: blue;
+
+%paragrafo {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: small;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid $rosso;
+    text-align: center;
+    height: 50%;
+    width: 90%;
+    margin: 2rem auto;
+
+    h1 {
+        color: $verde;
+        text-decoration: underline;
+        text-decoration-color: $blu;
+        margin: 2rem 0;
+    }
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 1rem 0;
+
+        article {
+            border: 1px solid $verde;
+            width: 25%;
+            height: 5rem;
+
+            &:first-child {
+                margin-left: 2rem;
+            }
+
+            &:last-child {
+                margin-right: 2rem;
+            }
+
+            &:nth-child(even) {
+                p {
+                    @extend %paragrafo;
+                    color: $blu;
+                }
+            }
+
+            &:nth-child(odd) {
+                p {
+                    @extend %paragrafo;
+                    color: $rosso;
+                }
+            }
+
+        }
+    }
+}
